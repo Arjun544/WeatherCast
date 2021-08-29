@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../App";
 
@@ -20,7 +20,7 @@ const SearchBar = () => {
   function handleSubmitInputChange(e) {
     setInputValue(e.target.value);
     const getWeather = async () => {
-      const apiKey = "3f7b75d863ad43999b1105325212708";
+      const apiKey = "";
       setShowSearch(false);
       try {
         const response = await axios.get(
@@ -48,7 +48,7 @@ const SearchBar = () => {
 
   function handleClear(e) {
     const getWeather = async () => {
-      const apiKey = "3f7b75d863ad43999b1105325212708";
+      const apiKey = "";
       setShowSearch(false);
       try {
         const response = await axios.get(

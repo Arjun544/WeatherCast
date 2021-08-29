@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     const getWeather = async () => {
-      const apiKey = "3f7b75d863ad43999b1105325212708";
+      const apiKey = "";
 
       try {
         const response = await axios.get(
