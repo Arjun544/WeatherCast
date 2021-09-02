@@ -1,12 +1,23 @@
 import React, { useContext } from "react";
+import Lottie from "lottie-react";
 
 import { AppContext } from "../App";
+import LineChart from "./TempChart";
+import clouds from "../images/clouds.json";
 
 const RightSection = ({ dayDetails }) => {
-  const { currentLocation } = useContext(AppContext);
-  console.log(dayDetails);
+  const { currentLocation, weather } = useContext(AppContext);
   return (
-    <div className="flex flex-col w-full bg-customPriColor-light h-screen items-center justify-between">
+    <div className="flex flex-col w-full bg-customPriColor-light h-screen items-center justify-between relative overflow-x-hidden">
+      <div className="flex absolute top-20 -left-24 z-50">
+        <Lottie className="h-40 opacity-10 " animationData={clouds} />
+      </div>
+      <div className="flex absolute -right-24 z-50 ">
+        <Lottie className="h-40 opacity-10 " animationData={clouds} />
+      </div>
+      <div className="flex absolute top-36 -right-10 z-50 ">
+        <Lottie className="h-32 opacity-10 " animationData={clouds} />
+      </div>
       <div className="flex flex-col items-center justify-center">
         <span className="flex font-semibold text-xs tracking-widest text-gray-300 mt-12 mb-2">
           Your location
@@ -97,7 +108,7 @@ const RightSection = ({ dayDetails }) => {
         </div>
       </div>
 
-      <div className="flex h-20"></div>
+      <LineChart />
     </div>
   );
 };

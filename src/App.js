@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     const getWeather = async () => {
-      const apiKey = "";
+      const apiKey = "3f7b75d863ad43999b1105325212708";
 
       try {
         const response = await axios.get(
@@ -42,7 +42,6 @@ function App() {
         );
         const myWeather = response.data;
         setWeather(myWeather);
-        console.log(response.data);
       } catch (error) {
         console.error(error.message);
       }
