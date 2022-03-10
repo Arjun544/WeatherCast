@@ -6,7 +6,8 @@ import LineChart from "./TempChart";
 import clouds from "../images/clouds.json";
 
 const RightSection = ({ dayDetails }) => {
-  const { currentLocation, weather } = useContext(AppContext);
+  const { currentLocation } = useContext(AppContext);
+
   return (
     <div className="flex flex-col w-full bg-customPriColor-light h-screen items-center justify-between relative overflow-x-hidden">
       <div className="flex absolute top-20 -left-24 z-50">
@@ -42,7 +43,7 @@ const RightSection = ({ dayDetails }) => {
           </svg>
 
           <span className="flex font-semibold text-sm tracking-widest text-white ml-2">
-            {currentLocation.city}, {currentLocation.country_name}
+            {currentLocation.city ?? 'Unknown city'}, {currentLocation.country_name}
           </span>
         </div>
       </div>

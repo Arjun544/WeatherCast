@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     const getWeather = async () => {
-      const apiKey = "";
+      const apiKey = "3f7b75d863ad43999b1105325212708";
 
       try {
         const response = await axios.get(
@@ -51,14 +51,15 @@ function App() {
   }, [currentLocation]);
 
   return typeof weather.current == "undefined" ? (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
       <Loader
         type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
+        color="#F8D57E"
+        height={80}
+        width={80}
         timeout={3000} //3 secs
       />
+      <span className="font-semibold mt-4 tracking-widest">Getting ready</span>
     </div>
   ) : (
     <AppContext.Provider
@@ -85,7 +86,7 @@ function App() {
               {/* Search Bar */}
               <SearchBar />
               <div className="tabs tabs-boxed flex items-center justify-between w-72 h-16 rounded-3xl px-5 bg-grey-light cursor-pointer">
-                <a
+                <span
                   onClick={(e) => {
                     e.preventDefault();
                     setSelectedTab(0);
@@ -98,8 +99,8 @@ function App() {
                   }
                 >
                   Today
-                </a>
-                <a
+                </span>
+                <span
                   onClick={(e) => {
                     e.preventDefault();
                     setSelectedTab(1);
@@ -112,13 +113,13 @@ function App() {
                   }
                 >
                   Weekly
-                </a>
+                </span>
               </div>
             </div>
             {showClearButton && (
               <div className="flex items-center justify-center">
                 <span className="font-semibold text-sm text-gray-400 mr-1">
-                  show weather of
+                  showing weather of
                 </span>
                 <span className="font-semibold text-black text-sm">
                   {`${searchresults.location.name} ${searchresults.location.region} ${searchresults.location.country}`}
@@ -160,7 +161,7 @@ function App() {
 
           <div className="flex items-center justify-center cursor-pointer">
             <div className="tabs tabs-boxed flex items-center justify-between w-72 h-16 rounded-3xl px-5 bg-grey-light">
-              <a
+              <span
                 onClick={(e) => {
                   e.preventDefault();
                   setSelectedTab(0);
@@ -173,8 +174,8 @@ function App() {
                 }
               >
                 Today
-              </a>
-              <a
+              </span>
+              <span
                 onClick={(e) => {
                   e.preventDefault();
                   setSelectedTab(1);
@@ -187,7 +188,7 @@ function App() {
                 }
               >
                 Weekly
-              </a>
+              </span>
             </div>
           </div>
 

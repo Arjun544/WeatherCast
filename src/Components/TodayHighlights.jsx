@@ -217,8 +217,7 @@ const TodayHighlights = () => {
             Day/Night
           </span>
           <span className="font-medium tracking-widest text-2xl">
-            {(weather.current.is_day === 0 && "Day") ||
-              (weather.current.is_day !== 0 && "Night")}
+            {(weather.current.is_day === 1 ? "Day" : "Night") }
           </span>
           <span className="font-semibold tracking-widest text-sm"></span>
         </div>

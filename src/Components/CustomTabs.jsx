@@ -22,8 +22,7 @@ export default function CustomTabs() {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-customPriColor-light ring-opacity-60",
+                  "w-full py-2.5 text-xs leading-5 font-semibold text-blue-700 rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-customPriColor-light ring-opacity-60",
                   selected
                     ? "bg-black text-white shadow"
                     : "text-gray-300 hover:bg-white/[0.12] hover:text-black"

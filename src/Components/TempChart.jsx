@@ -19,7 +19,7 @@ const TempChart = () => {
         fill: false,
         backgroundColor: "#89defa",
         borderColor: "white",
-        fontColor: "white",
+        fontColor: "#ffff",
       },
     ],
   };
@@ -33,6 +33,7 @@ const TempChart = () => {
     scales: {
       yAxes: [
         {
+          labelString: "Avg temp",
           ticks: {
             beginAtZero: true,
             fontColor: "#FFFFFF",
