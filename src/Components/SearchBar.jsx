@@ -20,11 +20,10 @@ const SearchBar = () => {
   function handleSubmitInputChange(e) {
     setInputValue(e.target.value);
     const getWeather = async () => {
-      const apiKey = "3f7b75d863ad43999b1105325212708";
       setShowSearch(false);
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${e.target.value}&days=7&aqi=yes&alerts=yes`
+          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${e.target.value}&days=7&aqi=yes&alerts=yes`
         );
         const myWeather = response.data;
         setSearchResults(myWeather);
@@ -48,11 +47,10 @@ const SearchBar = () => {
 
   function handleClear(e) {
     const getWeather = async () => {
-      const apiKey = "3f7b75d863ad43999b1105325212708";
       setShowSearch(false);
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${currentLocation.city}&days=7&aqi=yes&alerts=yes`
+          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${currentLocation.city}&days=7&aqi=yes&alerts=yes`
         );
         const myWeather = response.data;
         setWeather(myWeather);
