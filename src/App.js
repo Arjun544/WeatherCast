@@ -56,7 +56,6 @@ function App() {
         color="#F8D57E"
         height={80}
         width={80}
-        timeout={3000} //3 secs
       />
       <span className="font-semibold mt-4 tracking-widest">Getting ready</span>
     </div>
