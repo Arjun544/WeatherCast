@@ -23,7 +23,7 @@ const SearchBar = () => {
       setShowSearch(false);
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${e.target.value}&days=7&aqi=yes&alerts=yes/`
+          `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${e.target.value}&days=7&aqi=yes&alerts=yes`
         );
         const myWeather = response.data;
         setSearchResults(myWeather);
@@ -50,7 +50,7 @@ const SearchBar = () => {
       setShowSearch(false);
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${currentLocation.city}&days=7&aqi=yes&alerts=yes/`
+          `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${currentLocation.city}&days=7&aqi=yes&alerts=yes`
         );
         const myWeather = response.data;
         setWeather(myWeather);
