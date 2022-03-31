@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 const TodayHighlights = () => {
-  const {isBigScreen, weather } = useContext(AppContext);
+  const { isBigScreen, weather } = useContext(AppContext);
 
   return (
     <div className="flex flex-col mt-4">
@@ -14,21 +14,21 @@ const TodayHighlights = () => {
         {/* Grid Tile */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
           <div className="flex flex-col items-start">
-            <span className="font-medium tracking-widest text-xs text-gray-500">
+            <span className="font-medium tracking-widest text-xs text-gray-600">
               Uv Index
             </span>
 
-            <div className="ml-5 mb-6">
+            <div className="ml-5 mb-6 text-black">
               <SemiCircleProgressBar
                 diameter={130}
                 percentage={weather.current.uv}
                 showPercentValue
                 stroke={"#F8D57E"}
-                background={"#DFE2FE"}
+                background={"#d6d9fa"}
               />
             </div>
 
-            <span className="font-semibold tracking-widest text-sm">
+            <span className="font-semibold tracking-widest text-black text-sm">
               {(weather.current.uv >= 0 && weather.current.uv <= 2 && "Low") ||
                 (weather.current.uv >= 3 &&
                   weather.current.uv <= 5 &&
@@ -45,7 +45,7 @@ const TodayHighlights = () => {
         </div>
 
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Sunrise & Sunset
           </span>
           <div className="flex items-center">
@@ -70,7 +70,7 @@ const TodayHighlights = () => {
                 />
               </g>
             </svg>
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {weather.forecast.forecastday[0].astro.sunrise}
             </span>
           </div>
@@ -97,25 +97,25 @@ const TodayHighlights = () => {
               </g>
             </svg>
 
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-black text-sm">
               {weather.forecast.forecastday[0].astro.sunset}
             </span>
           </div>
         </div>
 
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Wind Status
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {weather.current.wind_mph}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               km/h
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-black text-sm">
             {(weather.current.wind_mph >= 0 &&
               weather.current.wind_mph <= 3 &&
               "Light Air") ||
@@ -132,18 +132,18 @@ const TodayHighlights = () => {
           </span>
         </div>
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Visibility
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {weather.current.vis_miles}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               miles
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(weather.current.vis_miles <= 0.5 && "Very Poor") ||
               (weather.current.vis_miles > 0.5 &&
                 weather.current.vis_miles <= 2 &&
@@ -156,18 +156,18 @@ const TodayHighlights = () => {
         </div>
 
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Humidity
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {weather.current.humidity}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               %
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(weather.current.humidity < 25 && "Poor") ||
               (weather.current.humidity > 25 &&
                 weather.current.humidity < 30 &&
@@ -180,18 +180,18 @@ const TodayHighlights = () => {
         </div>
 
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Air Quality
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {weather.current.air_quality["us-epa-index"]}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               index
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(weather.current.air_quality["us-epa-index"] >= 0 &&
               weather.current.air_quality["us-epa-index"] <= 50 &&
               "Good") ||
@@ -213,13 +213,13 @@ const TodayHighlights = () => {
         </div>
 
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-400">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Day/Night
           </span>
-          <span className="font-medium tracking-widest text-2xl">
-            {(weather.current.is_day === 1 ? "Day" : "Night") }
+          <span className="font-medium tracking-widest text-base text-black">
+            {weather.current.is_day === 1 ? "Day" : "Night"}
           </span>
-          <span className="font-semibold tracking-widest text-sm"></span>
+          <span className="font-semibold tracking-widest text-sm text-black"></span>
         </div>
       </div>
     </div>

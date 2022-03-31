@@ -3,7 +3,7 @@ import SemiCircleProgressBar from "react-progressbar-semicircle";
 import { AppContext } from "../App";
 
 const SelectedDayHighlights = ({ dayDetails }) => {
-   const { isBigScreen } = useContext(AppContext);
+  const { isBigScreen } = useContext(AppContext);
   return (
     <div className="flex flex-col  mt-4">
       {/* Grid View */}
@@ -12,7 +12,7 @@ const SelectedDayHighlights = ({ dayDetails }) => {
       >
         {/* General */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             General
           </span>
           <div className="flex items-center">
@@ -21,21 +21,21 @@ const SelectedDayHighlights = ({ dayDetails }) => {
               src={dayDetails.day.condition.icon}
               alt="icon"
             />
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-medium tracking-widest text-xs text-black">
               {dayDetails.day.condition.text}
             </span>
           </div>
           <div className="flex items-center">
-            <span className="font-medium tracking-widest text-xs text-gray-300 mr-1">
+            <span className="font-medium tracking-widest text-xs text-gray-400 mr-1">
               Max
             </span>
-            <span className="font-semibold tracking-widest text-sm mr-3">
+            <span className="font-semibold tracking-widest text-sm mr-3 text-black">
               {dayDetails.day.maxtemp_c}
             </span>
-            <span className="font-medium tracking-widest text-xs text-gray-300 mr-1">
+            <span className="font-medium tracking-widest text-xs text-gray-400 mr-1">
               Min
             </span>
-            <span className="font-semibold tracking-widest text-sm">
+            <span className="font-semibold tracking-widest text-black text-sm">
               {dayDetails.day.mintemp_c}
             </span>
           </div>
@@ -43,21 +43,21 @@ const SelectedDayHighlights = ({ dayDetails }) => {
         {/* UV indec */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
           <div className="flex flex-col items-start">
-            <span className="font-medium tracking-widest text-xs text-gray-500">
+            <span className="font-medium tracking-widest text-xs text-gray-600">
               Uv Index
             </span>
 
-            <div className="ml-5 mb-6">
+            <div className="ml-5 mb-6 text-black">
               <SemiCircleProgressBar
                 diameter={130}
                 percentage={dayDetails.day.uv}
                 showPercentValue
                 stroke={"#F8D57E"}
-                background={"#DFE2FE"}
+                background={"#d6d9fa"}
               />
             </div>
 
-            <span className="font-semibold tracking-widest text-sm">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {(dayDetails.day.uv >= 0 && dayDetails.day.uv <= 2 && "Low") ||
                 (dayDetails.day.uv >= 3 &&
                   dayDetails.day.uv <= 5 &&
@@ -72,7 +72,7 @@ const SelectedDayHighlights = ({ dayDetails }) => {
         </div>
         {/* Sunrise & Sunset */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Sunrise & Sunset
           </span>
           <div className="flex items-center">
@@ -97,7 +97,7 @@ const SelectedDayHighlights = ({ dayDetails }) => {
                 />
               </g>
             </svg>
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {dayDetails.astro.sunrise}
             </span>
           </div>
@@ -124,14 +124,14 @@ const SelectedDayHighlights = ({ dayDetails }) => {
               </g>
             </svg>
 
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {dayDetails.astro.sunset}
             </span>
           </div>
         </div>
         {/* Moonrise & Moonset */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Moonrise & Moonset
           </span>
           <div className="flex items-center">
@@ -156,7 +156,7 @@ const SelectedDayHighlights = ({ dayDetails }) => {
                 />
               </g>
             </svg>
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {dayDetails.astro.moonrise}
             </span>
           </div>
@@ -183,25 +183,25 @@ const SelectedDayHighlights = ({ dayDetails }) => {
               </g>
             </svg>
 
-            <span className="font-semibold tracking-widest text-lg">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {dayDetails.astro.moonrise}
             </span>
           </div>
         </div>
         {/* Wind Status */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Wind Status
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {dayDetails.day.maxwind_mph}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               km/h
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(dayDetails.day.maxwind_mph >= 0 &&
               dayDetails.day.maxwind_mph <= 3 &&
               "Light Air") ||
@@ -219,18 +219,18 @@ const SelectedDayHighlights = ({ dayDetails }) => {
         </div>
         {/* Visibility */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Visibility
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {dayDetails.day.avgvis_miles}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               miles
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(dayDetails.day.avgvis_miles <= 0.5 && "Very Poor") ||
               (dayDetails.day.avgvis_miles > 0.5 &&
                 dayDetails.day.avgvis_miles <= 2 &&
@@ -243,18 +243,18 @@ const SelectedDayHighlights = ({ dayDetails }) => {
         </div>
         {/* Humidity */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
-          <span className="font-medium tracking-widest text-xs text-gray-500">
+          <span className="font-medium tracking-widest text-xs text-gray-600">
             Humidity
           </span>
-          <div className="flex items-end">
-            <span className="font-medium tracking-widest text-2xl">
+          <div className="flex items-center gap-1">
+            <span className="font-medium tracking-widest text-base text-black">
               {dayDetails.day.avghumidity}
             </span>
-            <span className="font-semibold tracking-widest text-xs mb-1.5">
+            <span className="font-semibold tracking-widest text-xs text-black">
               %
             </span>
           </div>
-          <span className="font-semibold tracking-widest text-sm">
+          <span className="font-semibold tracking-widest text-sm text-black">
             {(dayDetails.day.avghumidity < 25 && "Poor") ||
               (dayDetails.day.avghumidity > 25 &&
                 dayDetails.day.avghumidity < 30 &&
@@ -268,21 +268,21 @@ const SelectedDayHighlights = ({ dayDetails }) => {
         {/* Rain chances */}
         <div className="h-40 flex flex-col bg-customBgColor-light rounded-3xl items-start justify-between p-4 hover:shadow-md">
           <div className="flex flex-col items-start">
-            <span className="font-medium tracking-widest text-xs text-gray-500">
+            <span className="font-medium tracking-widest text-xs text-gray-600">
               Rain chance
             </span>
 
-            <div className="ml-5 mb-6">
+            <div className="ml-5 mb-6 text-black">
               <SemiCircleProgressBar
                 diameter={130}
                 percentage={dayDetails.day.daily_chance_of_rain}
                 showPercentValue
                 stroke={"#F8D57E"}
-                background={"#DFE2FE"}
+                background={"#d6d9fa"}
               />
             </div>
 
-            <span className="font-semibold tracking-widest text-sm">
+            <span className="font-semibold tracking-widest text-sm text-black">
               {(dayDetails.day.daily_chance_of_rain < 20 && "Very Light") ||
                 (dayDetails.day.daily_chance_of_rain >= 30 &&
                   dayDetails.day.daily_chance_of_rain <= 50 &&

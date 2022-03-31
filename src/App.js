@@ -34,7 +34,6 @@ function App() {
 
   useEffect(() => {
     const getWeather = async () => {
-
       try {
         const response = await axios.get(
           `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${currentLocation.city}&days=7&aqi=yes&alerts=yes/`
@@ -51,12 +50,7 @@ function App() {
 
   return typeof weather.current == "undefined" ? (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Loader
-        type="Puff"
-        color="#F8D57E"
-        height={80}
-        width={80}
-      />
+      <Loader type="Puff" color="#F8D57E" height={80} width={80} />
       <span className="font-semibold mt-4 tracking-widest">Getting ready</span>
     </div>
   ) : (
@@ -74,7 +68,7 @@ function App() {
     >
       {isBigScreen ? (
         <div className="flex">
-          <div className="App flex flex-col w-3/4">
+          <div className="App flex flex-col w-3/4 bg-white">
             {/* Logo */}
             <TopHeader />
 

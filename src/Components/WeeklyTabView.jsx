@@ -7,8 +7,6 @@ const WeeklyTabView = () => {
   const { isBigScreen, weather } = useContext(AppContext);
   const [selectedDay, setSelectedDay] = useState(Date.now);
 
-  console.log(weather);
-
   useEffect(() => {}, [selectedDay]);
 
   return (
@@ -29,7 +27,7 @@ const WeeklyTabView = () => {
                 : "flex flex-col h-32 py-1 px-7 mr-3 mb-6 bg-customBgColor-light rounded-3xl items-center justify-around cursor-pointer transform hover:scale-110 transition duration-500 ease-in-out hover:bg-amber-light hover:text-white"
             }
           >
-            <span className="font-semibold text-sm tracking-widest">
+            <span className="font-semibold text-sm text-black tracking-widest hover:text-white">
               {moment(item.date).format("ddd")}
             </span>
             <img
@@ -65,7 +63,7 @@ const WeeklyTabView = () => {
 
       {/* Selected Day HighLights */}
       <div className="flex mt-8">
-        <span className="font-medium">
+        <span className="font-medium text-black tracking-wider">
           {moment(selectedDay).format("dddd")} Highlights
         </span>
       </div>

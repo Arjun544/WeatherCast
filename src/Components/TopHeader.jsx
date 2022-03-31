@@ -40,7 +40,7 @@ const TopHeader = () => {
     <div className="flex items-center justify-between mt-10 mx-12 mb-6">
       <div className="flex items-center">
         <img className="h-10 mr-3" src="/logo.png" alt="logo" />
-        <span className="font-bold text-customPriColor-light">WeatherCast</span>
+        <span className="font-semibold text-black tracking-wider">WeatherCast</span>
       </div>
       <div className="flex items-center ">
         <span className="font-semibold text-xs tracking-wide text-gray-400 ml-2">
