@@ -2,6 +2,9 @@
 
 ### WeatherCast is a web based app, which gives live weather updates of any location.
 
+## live:
+Url : https://weathercast-demo.herokuapp.com
+
 ## Stack:
 1. React
 2. Tailwind Css
