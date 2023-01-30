@@ -1,7 +1,7 @@
 import { useState, useEffect, useLayoutEffect, createContext } from "react";
 import "./App.css";
 import axios from "axios";
-import Loader from "react-loader-spinner";
+import  { Puff } from "react-loader-spinner";
 import SearchBar from "./Components/SearchBar";
 import TopHeader from "./Components/TopHeader";
 import TodayTabView from "./Components/TodayTabView";
@@ -25,6 +25,7 @@ function App() {
       try {
         const res = await axios.get("https://geolocation-db.com/json/");
         setCurrentLocation(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -50,7 +51,7 @@ function App() {
 
   return typeof weather.current == "undefined" ? (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Loader type="Puff" color="#F8D57E" height={80} width={80} />
+      <Puff  color="#F8D57E" height={80} width={80} />
       <span className="font-semibold mt-4 tracking-widest">Getting ready</span>
     </div>
   ) : (

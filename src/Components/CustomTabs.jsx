@@ -17,9 +17,9 @@ export default function CustomTabs() {
     <div className="w-screen flex-grow-0 max-w-md py-8 sm:px-0 bg-white ">
       <Tab.Group>
         <Tab.List className="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
-          {Object.keys(categories).map((category) => (
+          {Object.keys(categories).map((category, index) => (
             <Tab
-              key={category}
+              key={index}
               className={({ selected }) =>
                 classNames(
                   "w-full py-2.5 text-xs leading-5 font-semibold text-blue-700 rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-customPriColor-light ring-opacity-60",

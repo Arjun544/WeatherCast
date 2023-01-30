@@ -9,7 +9,7 @@ const TopHeader = () => {
     <div className="flex items-center justify-between mt-6 mx-6 ">
       <div className="flex items-center">
         <img className="h-10 mr-3" src="/logo.png" alt="logo" />
-        <span className="font-bold text-customPriColor-light">WeatherCast</span>
+        <span className="font-bold text-white">WeatherCast</span>
       </div>
 
       <div className="flex items-center">

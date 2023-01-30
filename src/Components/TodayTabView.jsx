@@ -69,9 +69,14 @@ const TodayTabView = () => {
         <span className="font-medium text-black tracking-wider">Hourly</span>
       </div>
       <div className="flex overflow-x-auto scrollbar scrollbar-thin scrollbar-thumb-customPriColor-light scrollbar-track-grey-light">
-        {weather.forecast.forecastday[0].hour.map((item) => (
-          <div className="flex flex-col h-32 py-1 px-8 mr-4 mb-6 bg-customBgColor-light rounded-3xl justify-around hover:shadow-md">
-            <span className="font-semibold text-sm text-gray-500">{item.temp_c}</span>
+        {weather.forecast.forecastday[0].hour.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col h-32 py-1 px-8 mr-4 mb-6 bg-customBgColor-light rounded-3xl justify-around hover:shadow-md"
+          >
+            <span className="font-semibold text-sm text-gray-500">
+              {item.temp_c}
+            </span>
             <img className="h-14 w-14" src={item.condition.icon} alt="" />
             <span className="font-medium tracking-widest text-xs text-gray-400">
               {moment(item.time).format("hh:mm")}
